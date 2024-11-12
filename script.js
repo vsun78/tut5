@@ -42,7 +42,12 @@ function clickCircle() {
     if (clickedColor == pickedColor) {
         resultMessage.textContent = "You win!";
         resetButton.textContent = "Play again";
-        changeColors(clickedColor);
+	    
+        // Change the color of all circles to the picked color
+        for (var i = 0; i < circles.length; i++) {
+            circles[i].style.backgroundColor = pickedColor;
+        }
+	    
         banner.style.backgroundColor = pickedColor;
     } else {
         this.style.backgroundColor = defaultColour;
